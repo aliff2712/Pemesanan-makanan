@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kasir McD Simulasi</title>
+  <title>McOrder — Pesan Sendiri!</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>🍔 Pilih menu!</h1>
+    <h1>🍔 Selamat Datang di McOrder!</h1>
+    <p>Pilih menu favoritmu dan nikmati pesananmu 🎉</p>
   </header>
 
   <main>
@@ -24,23 +25,54 @@
     </section>
 
     <section class="order-container">
-      <h2>🧾 Pesanan</h2>
+      <h2>🧾 Pesanan Kamu</h2>
       <ul id="orderList"></ul>
       <h3>Total: Rp<span id="total">0</span></h3>
 
+      <div class="delivery-section">
+        <h3>🚚 Pilih Opsi Pengantaran</h3>
+        <select id="opsiPengantaran" onchange="toggleAlamat()">
+          <option value="" disabled selected>Pilih opsi...</option>
+          <option value="Ambil Sendiri">Ambil Sendiri di Restoran</option>
+          <option value="Antar ke Rumah">Antar ke Rumah</option>
+        </select>
+
+        <div id="alamatSection" style="display:none; margin-top:8px;">
+          <input type="text" id="alamatPengantaran" placeholder="Masukkan alamat lengkap...">
+        </div>
+      </div>
+
+      <div class="payment-section">
+        <h3>💳 Pilih Metode Pembayaran</h3>
+        <select id="metodePembayaran">
+          <option value="" disabled selected>Pilih metode...</option>
+          <option value="Tunai">Tunai</option>
+          <option value="E-Wallet">E-Wallet (Gopay / OVO / DANA)</option>
+          <option value="Kartu Debit/Kredit">Kartu Debit/Kredit</option>
+        </select>
+      </div>
+
       <div class="bayar-section">
-        <input type="number" id="uangBayar" placeholder="Uang bayar (Rp)">
-        <button onclick="bayar()">Bayar</button>
+        <input type="number" id="uangBayar" placeholder="Masukkan nominal pembayaran (Rp)">
+        <button onclick="bayar()">Pesan Sekarang</button>
         <p id="kembalian"></p>
       </div>
 
-      <button class="reset-btn" onclick="resetOrder()">Reset</button>
+      <button class="reset-btn" onclick="resetOrder()">Batalkan Pesanan</button>
     </section>
   </main>
 
-  <audio id="klikSound" src="klik.mp3"></audio>
+  <!-- 🔽 Popup Struk Digital -->
+  <div id="popupStruk" class="popup">
+    <div class="popup-content">
+      <h2>🧾 Struk Digital</h2>
+      <div id="strukDetail"></div>
+      <button onclick="cetakStruk()">🖨️ Cetak</button>
+      <button class="close-btn" onclick="tutupStruk()">Tutup</button>
+    </div>
+  </div>
+
   <audio id="successSound" src="success.mp3"></audio>
-  <audio id="resetSound" src="reset.mp3"></audio>
 
   <script src="script.js"></script>
 </body>
