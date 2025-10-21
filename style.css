@@ -1,0 +1,124 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #fff5e6;
+  color: #333;
+}
+
+header {
+  background-color: #d61c1c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.menu-container, .order-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+.menu-container {
+  flex: 2;
+  max-width: 600px;
+}
+
+.order-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.kategori {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.kategori button {
+  background: #f1c40f;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.kategori button.active {
+  background: #d61c1c;
+  color: white;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.menu-item {
+  background: #ffe9cc;
+  border-radius: 12px;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+  background: #ffc266;
+}
+
+.menu-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.order-container ul {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.order-container li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.bayar-section {
+  margin-top: 1rem;
+}
+
+.bayar-section input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.reset-btn {
+  background: #d61c1c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.reset-btn:hover {
+  background: #b91313;
+}

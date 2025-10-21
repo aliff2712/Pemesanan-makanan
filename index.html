@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasir McD Simulasi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍔 Pilih menu!</h1>
+  </header>
+
+  <main>
+    <section class="menu-container">
+      <div class="kategori">
+        <button onclick="filterMenu('all')" class="active">Semua</button>
+        <button onclick="filterMenu('makanan')">Makanan</button>
+        <button onclick="filterMenu('minuman')">Minuman</button>
+        <button onclick="filterMenu('dessert')">Dessert</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <section class="order-container">
+      <h2>🧾 Pesanan</h2>
+      <ul id="orderList"></ul>
+      <h3>Total: Rp<span id="total">0</span></h3>
+
+      <div class="bayar-section">
+        <input type="number" id="uangBayar" placeholder="Uang bayar (Rp)">
+        <button onclick="bayar()">Bayar</button>
+        <p id="kembalian"></p>
+      </div>
+
+      <button class="reset-btn" onclick="resetOrder()">Reset</button>
+    </section>
+  </main>
+
+  <audio id="klikSound" src="klik.mp3"></audio>
+  <audio id="successSound" src="success.mp3"></audio>
+  <audio id="resetSound" src="reset.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
